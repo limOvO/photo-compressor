@@ -1,0 +1,2 @@
+# photo-compressor
+compress image
