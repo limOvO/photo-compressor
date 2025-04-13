@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compressor Tool</h1>
+        <form id="upload-form" method="POST" action="{{ url_for('compress') }}" enctype="multipart/form-data">
+            <label for="file-input">Choose an image to compress:</label>
+            <input type="file" id="file-input" name="file" accept="image/*" required>
+            <label for="target-size">Target size (MB):</label>
+            <input type="number" id="target-size" name="target_size" value="10" min="1" max="100">
+            <button type="submit">Compress Image</button>
+            <div class="progress-container" style="display: none;">
+                <div class="progress-bar">
+                    <span class="progress-text">0%</span>
+                </div>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
