@@ -1,0 +1,122 @@
+:root {
+    --bg-color: #f4f4f4;
+    --container-bg: #fff;
+    --text-color: #333;
+    --border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --container-bg: #2d2d2d;
+        --text-color: #e0e0e0;
+        --border-color: #404040;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="file"], input[type="number"] {
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.download-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+/* Add progress bar styles */
+.progress-container {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #28a745;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
